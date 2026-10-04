@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#10131a"><link rel="manifest" href="manifest.json">
+<title>Scientific Calculator</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth" class="auth">
+  <div class="auth-card">
+    <div class="logo">∑</div><h1>Scientific Calculator</h1>
+    <p class="sub">Create an account or sign in</p>
+    <div class="tabs"><button class="tab active" id="loginTab">Login</button><button class="tab" id="registerTab">Register</button></div>
+    <form id="authForm">
+      <input id="name" placeholder="Name" autocomplete="name" class="register-only">
+      <input id="email" type="email" placeholder="Email" autocomplete="email" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button class="primary" type="submit" id="authBtn">Login</button>
+    </form><p id="authMsg"></p>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+<header><div><strong>Scientific Calculator</strong><span id="welcome"></span></div>
+<div class="header-actions"><button id="installBtn" class="small hidden">Install</button><button id="themeBtn" class="icon">☀️</button><button id="logoutBtn" class="small">Logout</button></div></header>
+<main>
+<section class="calculator">
+  <div class="display">
+    <div id="expression"></div><div id="result">0</div>
+  </div>
+  <div class="mode-row"><button id="angleBtn" class="mode">DEG</button><button id="clearHistory" class="mode">Clear History</button></div>
+  <div class="keys">
+    <button data-v="sin(">sin</button><button data-v="cos(">cos</button><button data-v="tan(">tan</button><button data-v="log(">log</button><button data-v="ln(">ln</button><button data-v="√(">√</button>
+    <button data-v="asin(">sin⁻¹</button><button data-v="acos(">cos⁻¹</button><button data-v="atan(">tan⁻¹</button><button data-v="π">π</button><button data-v="e">e</button><button data-v="^">xʸ</button>
+    <button data-v="(">(</button><button data-v=")">)</button><button data-v="x²">x²</button><button data-v="x³">x³</button><button data-v="!">!</button><button data-v="1/x">1/x</button>
+    <button class="danger" id="ac">AC</button><button id="del">DEL</button><button data-v="%">%</button><button data-v="÷">÷</button><button data-v="×">×</button><button data-v="-">−</button>
+    <button data-v="7">7</button><button data-v="8">8</button><button data-v="9">9</button><button data-v="+">+</button><button data-v=".">.</button><button id="equals" class="equals">=</button>
+    <button data-v="4">4</button><button data-v="5">5</button><button data-v="6">6</button><button data-v="0">0</button><button data-v="Ans">Ans</button><button id="historyToggle">History</button>
+    <button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="(-">±</button><button data-v="00">00</button><button data-v="⌫">⌫</button>
+  </div>
+</section>
+<aside id="historyPanel"><h2>History</h2><div id="historyList"><p>No calculations yet.</p></div></aside>
+</main>
+</div>
+<script src="app.js"></script>
+</body></html>
